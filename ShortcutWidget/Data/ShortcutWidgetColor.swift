@@ -34,6 +34,8 @@ enum ShortcutWidgetColor {
         }
     }
     
+    // Functions
+    
     func getColorWith(string: String?) -> Self {
         switch string {
         case "pink":
