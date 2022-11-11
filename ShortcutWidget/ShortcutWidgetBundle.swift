@@ -11,6 +11,7 @@ import SwiftUI
 @main
 struct ShortcutWidgetBundle: WidgetBundle {
     var body: some Widget {
-        ShortcutWidget()
+        ShortcutWidgetSmall()
+        ShortcutWidgetMedium()
     }
 }

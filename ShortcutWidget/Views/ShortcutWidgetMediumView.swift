@@ -9,7 +9,7 @@ import WidgetKit
 import SwiftUI
 
 struct ShortcutWidgetMediumView: View {
-    var defaultColor: ShortcutWidgetColorLogic
+    var defaultColor: ShortcutWidgetColor
     
     var body: some View {
         ZStack {
@@ -155,7 +155,7 @@ struct ShortcutWidgetMediumView: View {
 
 struct ShortcutMediumView_Previews: PreviewProvider {
     static var previews: some View {
-        ShortcutWidgetMediumView(defaultColor: ShortcutWidgetColorLogic.automatic)
+        ShortcutWidgetMediumView(defaultColor: ShortcutWidgetColor.automatic)
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

@@ -1,5 +1,5 @@
 //
-//  ShortcutWidgetColorLogic.swift
+//  ShortcutWidgetColor.swift
 //  ShortcutWidgetExtension
 //
 //  Created by Gabriel Targon on 10/11/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ShortcutWidgetColorLogic {
+enum ShortcutWidgetColor {
     case pink
     case blue
     case automatic
@@ -34,7 +34,7 @@ enum ShortcutWidgetColorLogic {
         }
     }
     
-    func getColorWith(string: String) -> Self {
+    func getColorWith(string: String?) -> Self {
         switch string {
         case "pink":
             return .pink

@@ -22,24 +22,3 @@ enum ShortcutURLs {
         return url
     }
 }
-
-struct ShortcutData {
-    
-    let views: Views
-    
-    struct Views {
-        let home: String
-        let email: String
-        let call: String
-        let profile: String
-        let config: String
-        
-        var url: URL {
-            guard let url = URL(string: "shortcutApp://widget/\(self)") else {
-                fatalError("Failed to construct url")
-            }
-            
-            return url
-        }
-    }
-}

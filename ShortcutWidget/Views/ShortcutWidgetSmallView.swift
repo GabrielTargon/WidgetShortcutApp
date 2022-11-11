@@ -9,7 +9,8 @@ import WidgetKit
 import SwiftUI
 
 struct ShortcutWidgetSmallView: View {
-    var defaultColor: ShortcutWidgetColorLogic
+    var defaultColor: ShortcutWidgetColor
+//    var action: ShortcutActionSmall
     
     var body: some View {
         ZStack {
@@ -57,12 +58,13 @@ struct ShortcutWidgetSmallView: View {
             .padding(.leading)
             .padding(.trailing)
         }
+        .widgetURL(ShortcutURLs.home.url)
     }
 }
 
 struct ShortcutSmallView_Previews: PreviewProvider {
     static var previews: some View {
-        ShortcutWidgetSmallView(defaultColor: ShortcutWidgetColorLogic.automatic)
+        ShortcutWidgetSmallView(defaultColor: ShortcutWidgetColor.automatic)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
