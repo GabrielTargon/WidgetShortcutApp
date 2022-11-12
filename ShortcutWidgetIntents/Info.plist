@@ -12,7 +12,8 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>ConfigurationIntent</string>
+				<string>MediumIntent</string>
+				<string>SmallIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>

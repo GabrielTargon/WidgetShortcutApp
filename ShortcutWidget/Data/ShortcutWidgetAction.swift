@@ -13,4 +13,21 @@ enum ShortcutWidgetAction {
     case call
     case profile
     case config
+    
+    func getActionWith(string: String?) -> Self {
+        switch string {
+        case "home":
+            return .home
+        case "email":
+            return .email
+        case "call":
+            return .call
+        case "profile":
+            return .profile
+        case "config":
+            return .config
+        default:
+            return .home
+        }
+    }
 }
