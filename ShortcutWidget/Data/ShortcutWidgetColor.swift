@@ -8,16 +8,16 @@
 import SwiftUI
 
 enum ShortcutWidgetColor {
-    case pink
-    case blue
+    case light
+    case dark
     case automatic
     
     var backgroundColor: Color {
         switch self {
-        case .pink:
-            return Color("PinkBackground")
-        case .blue:
-            return Color("BlueBackground")
+        case .light:
+            return Color("CeruleanBackground")
+        case .dark:
+            return Color("DenimBackground")
         case .automatic:
             return Color("DefaultBackground")
         }
@@ -25,10 +25,10 @@ enum ShortcutWidgetColor {
     
     var buttonColor: Color {
         switch self {
-        case .pink:
-            return Color("PinkButton")
-        case .blue:
-            return Color("BlueButton")
+        case .light:
+            return Color("CeruleanButton")
+        case .dark:
+            return Color("DenimButton")
         case .automatic:
             return Color("DefaultButton")
         }
@@ -38,10 +38,10 @@ enum ShortcutWidgetColor {
     
     func getColorWith(string: String?) -> Self {
         switch string {
-        case "pink":
-            return .pink
-        case "blue":
-            return .blue
+        case "light":
+            return .light
+        case "dark":
+            return .dark
         case "automatic":
             return .automatic
         default:

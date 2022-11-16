@@ -12,10 +12,10 @@ import Intents
 struct ProviderSmall: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntrySmall {
         SimpleEntrySmall(date: Date(),
-                         configuration: ConfigurationIntent())
+                         configuration: SmallIntent())
     }
 
-    func getSnapshot(for configuration: ConfigurationIntent,
+    func getSnapshot(for configuration: SmallIntent,
                      in context: Context,
                      completion: @escaping (SimpleEntrySmall) -> ()) {
         let entry = SimpleEntrySmall(date: Date(),
@@ -23,7 +23,7 @@ struct ProviderSmall: IntentTimelineProvider {
         completion(entry)
     }
 
-    func getTimeline(for configuration: ConfigurationIntent,
+    func getTimeline(for configuration: SmallIntent,
                      in context: Context,
                      completion: @escaping (Timeline<Entry>) -> ()) {
         let entry = SimpleEntrySmall(date: Date(),
@@ -37,17 +37,17 @@ struct ProviderSmall: IntentTimelineProvider {
 
 struct SimpleEntrySmall: TimelineEntry {
     let date: Date
-    let configuration: ConfigurationIntent
+    let configuration: SmallIntent
 }
 
 struct ShortcutWidgetEntrySmallView : View {
     var entry: ProviderSmall.Entry
     
-    let defaultColor: ShortcutWidgetColor
+    let widgetColor: ShortcutWidgetColor
 
     var body: some View {
         ShortcutWidgetSmallView(
-            defaultColor: defaultColor.getColorWith(string: entry.configuration.shortcutColor?.identifier))
+            defaultColor: widgetColor.getColorWith(string: entry.configuration.widgetColor?.identifier))
     }
 }
 
@@ -56,10 +56,10 @@ struct ShortcutWidgetSmall: Widget {
 
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind,
-                            intent: ConfigurationIntent.self,
+                            intent: SmallIntent.self,
                             provider: ProviderSmall()) { entry in
             ShortcutWidgetEntrySmallView(entry: entry,
-                                         defaultColor: ShortcutWidgetColor.automatic)
+                                         widgetColor: ShortcutWidgetColor.automatic)
         }
         .configurationDisplayName("Shortcut")
         .description("A small shortcut widget for your app.")
@@ -70,8 +70,8 @@ struct ShortcutWidgetSmall: Widget {
 struct ShortcutWidgetSmall_Previews: PreviewProvider {
     static var previews: some View {
             ShortcutWidgetEntrySmallView(entry: SimpleEntrySmall(date: Date(),
-                                                                 configuration: ConfigurationIntent()),
-                                         defaultColor: ShortcutWidgetColor.automatic)
+                                                                 configuration: SmallIntent()),
+                                         widgetColor: ShortcutWidgetColor.automatic)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
