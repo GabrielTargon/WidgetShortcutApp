@@ -1,6 +1,11 @@
 # WidgetShortcutApp
 iOS app with Widgets shortcuts
 
+| ![alt text](https://github.com/GabrielTargon/WidgetShortcutApp/blob/main/Images/Widget%201.png?raw=true) | ![alt text](https://github.com/GabrielTargon/WidgetShortcutApp/blob/main/Images/Widget%202.png?raw=true) | ![alt text](https://github.com/GabrielTargon/WidgetShortcutApp/blob/main/Images/Widget-Movie.gif) |
+| :---: | :---: | :---: |
+| Image 1 | Image 2 | Video |
+
+
 ## Requirements
 
 - iOS 14+
