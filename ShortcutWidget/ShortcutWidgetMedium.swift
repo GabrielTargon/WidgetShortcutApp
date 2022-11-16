@@ -48,12 +48,12 @@ struct ShortcutWidgetEntryMediumView: View {
 
     var body: some View {
         ShortcutWidgetMediumView(
-            widgetColor: widgetColor.getColorWith(string: entry.configuration.widgetColor?.identifier),
-            widgetActionOne: widgetAction.getActionWith(string: entry.configuration.widgetActionOne?.identifier),
-            widgetActionTwo: widgetAction.getActionWith(string: entry.configuration.widgetActionTwo?.identifier),
-            widgetActionThree: widgetAction.getActionWith(string: entry.configuration.widgetActionThree?.identifier),
-            widgetActionFour: widgetAction.getActionWith(string: entry.configuration.widgetActionFour?.identifier),
-            widgetActionFive: widgetAction.getActionWith(string: entry.configuration.widgetActionFive?.identifier))
+            widgetColor: widgetColor.getColorFrom(raw: entry.configuration.widgetColor.rawValue),
+            widgetActionOne: widgetAction.getActionFrom(raw: entry.configuration.widgetActionOne.rawValue),
+            widgetActionTwo: widgetAction.getActionFrom(raw: entry.configuration.widgetActionTwo.rawValue),
+            widgetActionThree: widgetAction.getActionFrom(raw: entry.configuration.widgetActionThree.rawValue),
+            widgetActionFour: widgetAction.getActionFrom(raw: entry.configuration.widgetActionFour.rawValue),
+            widgetActionFive: widgetAction.getActionFrom(raw: entry.configuration.widgetActionFive.rawValue))
     }
 }
 

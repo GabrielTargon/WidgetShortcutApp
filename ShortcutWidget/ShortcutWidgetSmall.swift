@@ -48,8 +48,8 @@ struct ShortcutWidgetEntrySmallView : View {
 
     var body: some View {
         ShortcutWidgetSmallView(
-            widgetColor: widgetColor.getColorWith(string: entry.configuration.widgetColor?.identifier),
-            widgetAction: widgetAction.getActionWith(string: entry.configuration.widgetAction?.identifier))
+            widgetColor: widgetColor.getColorFrom(raw: entry.configuration.widgetColor.rawValue),
+            widgetAction: widgetAction.getActionFrom(raw: entry.configuration.widgetAction.rawValue))
     }
 }
 

@@ -36,13 +36,13 @@ enum ShortcutWidgetColor {
     
     // Functions
     
-    func getColorWith(string: String?) -> Self {
-        switch string {
-        case "light":
+    func getColorFrom(raw: Int) -> Self {
+        switch raw {
+        case 1:
             return .light
-        case "dark":
+        case 2:
             return .dark
-        case "automatic":
+        case 3:
             return .automatic
         default:
             return .automatic

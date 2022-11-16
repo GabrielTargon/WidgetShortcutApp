@@ -59,17 +59,17 @@ enum ShortcutWidgetAction {
         }
     }
     
-    func getActionWith(string: String?) -> Self {
-        switch string {
-        case "home":
+    func getActionFrom(raw: Int) -> Self {
+        switch raw {
+        case 1:
             return .home
-        case "email":
+        case 2:
             return .email
-        case "call":
+        case 3:
             return .call
-        case "profile":
+        case 4:
             return .profile
-        case "config":
+        case 5:
             return .config
         default:
             return .home
