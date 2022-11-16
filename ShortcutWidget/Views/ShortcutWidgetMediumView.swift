@@ -9,11 +9,16 @@ import WidgetKit
 import SwiftUI
 
 struct ShortcutWidgetMediumView: View {
-    var defaultColor: ShortcutWidgetColor
+    var widgetColor: ShortcutWidgetColor
+    var widgetActionOne: ShortcutWidgetAction
+    var widgetActionTwo: ShortcutWidgetAction
+    var widgetActionThree: ShortcutWidgetAction
+    var widgetActionFour: ShortcutWidgetAction
+    var widgetActionFive: ShortcutWidgetAction
     
     var body: some View {
         ZStack {
-            defaultColor.backgroundColor
+            widgetColor.backgroundColor
             VStack(alignment: .center,
                    spacing: 15) {
                 HStack(alignment: .top) {
@@ -36,21 +41,21 @@ struct ShortcutWidgetMediumView: View {
                     .frame(height: 1)
                 
                 HStack {
-                    Link(destination: ShortcutURLs.home.url) {
+                    Link(destination: widgetActionOne.url) {
                         VStack {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 45,
                                            height: 45)
-                                    .foregroundColor(defaultColor.buttonColor)
+                                    .foregroundColor(widgetColor.buttonColor)
                                     .cornerRadius(25)
-                                Image("home")
+                                widgetActionOne.icon
                                     .resizable()
                                     .frame(width: 25,
                                            height: 25)
                             }
                             
-                            Text("Home")
+                            widgetActionOne.title
                                 .font(.system(size: 15))
                                 .foregroundColor(.white)
                                 .frame(height: 10)
@@ -58,21 +63,21 @@ struct ShortcutWidgetMediumView: View {
                         }
                     }
                     
-                    Link(destination: ShortcutURLs.email.url) {
+                    Link(destination: widgetActionTwo.url) {
                         VStack {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 45,
                                            height: 45)
-                                    .foregroundColor(defaultColor.buttonColor)
+                                    .foregroundColor(widgetColor.buttonColor)
                                     .cornerRadius(25)
-                                Image("email")
+                                widgetActionTwo.icon
                                     .resizable()
                                     .frame(width: 25,
                                            height: 25)
                             }
                             
-                            Text("Email")
+                            widgetActionTwo.title
                                 .font(.system(size: 15))
                                 .foregroundColor(.white)
                                 .frame(height: 10)
@@ -80,21 +85,21 @@ struct ShortcutWidgetMediumView: View {
                         }
                     }
                     
-                    Link(destination: ShortcutURLs.call.url) {
+                    Link(destination: widgetActionThree.url) {
                         VStack {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 45,
                                            height: 45)
-                                    .foregroundColor(defaultColor.buttonColor)
+                                    .foregroundColor(widgetColor.buttonColor)
                                     .cornerRadius(25)
-                                Image("call")
+                                widgetActionThree.icon
                                     .resizable()
                                     .frame(width: 25,
                                            height: 25)
                             }
                             
-                            Text("Call")
+                            widgetActionThree.title
                                 .font(.system(size: 15))
                                 .foregroundColor(.white)
                                 .frame(height: 10)
@@ -102,21 +107,21 @@ struct ShortcutWidgetMediumView: View {
                         }
                     }
                     
-                    Link(destination: ShortcutURLs.profile.url) {
+                    Link(destination: widgetActionFour.url) {
                         VStack {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 45,
                                            height: 45)
-                                    .foregroundColor(defaultColor.buttonColor)
+                                    .foregroundColor(widgetColor.buttonColor)
                                     .cornerRadius(25)
-                                Image("profile")
+                                widgetActionFour.icon
                                     .resizable()
                                     .frame(width: 25,
                                            height: 25)
                             }
                             
-                            Text("Profile")
+                            widgetActionFour.title
                                 .font(.system(size: 15))
                                 .foregroundColor(.white)
                                 .frame(height: 10)
@@ -124,21 +129,21 @@ struct ShortcutWidgetMediumView: View {
                         }
                     }
                     
-                    Link(destination: ShortcutURLs.config.url) {
+                    Link(destination: widgetActionFive.url) {
                         VStack {
                             ZStack {
                                 Rectangle()
                                     .frame(width: 45,
                                            height: 45)
-                                    .foregroundColor(defaultColor.buttonColor)
+                                    .foregroundColor(widgetColor.buttonColor)
                                     .cornerRadius(25)
-                                Image("configuration")
+                                widgetActionFive.icon
                                     .resizable()
                                     .frame(width: 25,
                                            height: 25)
                             }
                             
-                            Text("Config")
+                            widgetActionFive.title
                                 .font(.system(size: 15))
                                 .foregroundColor(.white)
                                 .frame(height: 10)
@@ -155,7 +160,12 @@ struct ShortcutWidgetMediumView: View {
 
 struct ShortcutMediumView_Previews: PreviewProvider {
     static var previews: some View {
-        ShortcutWidgetMediumView(defaultColor: ShortcutWidgetColor.automatic)
+        ShortcutWidgetMediumView(widgetColor: ShortcutWidgetColor.automatic,
+                                 widgetActionOne: ShortcutWidgetAction.home,
+                                 widgetActionTwo: ShortcutWidgetAction.email,
+                                 widgetActionThree: ShortcutWidgetAction.call,
+                                 widgetActionFour: ShortcutWidgetAction.profile,
+                                 widgetActionFive: ShortcutWidgetAction.config)
             .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

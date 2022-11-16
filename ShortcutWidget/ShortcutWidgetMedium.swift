@@ -11,7 +11,8 @@ import Intents
 
 struct ProviderMedium: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntryMedium {
-        SimpleEntryMedium(date: Date(), configuration: MediumIntent())
+        SimpleEntryMedium(date: Date(),
+                          configuration: MediumIntent())
     }
 
     func getSnapshot(for configuration: MediumIntent,
@@ -42,11 +43,17 @@ struct SimpleEntryMedium: TimelineEntry {
 struct ShortcutWidgetEntryMediumView: View {
     var entry: ProviderMedium.Entry
     
-    let defaultColor: ShortcutWidgetColor
+    let widgetColor: ShortcutWidgetColor
+    let widgetAction: ShortcutWidgetAction
 
     var body: some View {
         ShortcutWidgetMediumView(
-            defaultColor: defaultColor.getColorWith(string: entry.configuration.widgetColor?.identifier))
+            widgetColor: widgetColor.getColorWith(string: entry.configuration.widgetColor?.identifier),
+            widgetActionOne: widgetAction.getActionWith(string: entry.configuration.widgetActionOne?.identifier),
+            widgetActionTwo: widgetAction.getActionWith(string: entry.configuration.widgetActionTwo?.identifier),
+            widgetActionThree: widgetAction.getActionWith(string: entry.configuration.widgetActionThree?.identifier),
+            widgetActionFour: widgetAction.getActionWith(string: entry.configuration.widgetActionFour?.identifier),
+            widgetActionFive: widgetAction.getActionWith(string: entry.configuration.widgetActionFive?.identifier))
     }
 }
 
@@ -58,7 +65,8 @@ struct ShortcutWidgetMedium: Widget {
                             intent: MediumIntent.self,
                             provider: ProviderMedium()) { entry in
             ShortcutWidgetEntryMediumView(entry: entry,
-                                          defaultColor: ShortcutWidgetColor.automatic)
+                                          widgetColor: ShortcutWidgetColor.automatic,
+                                          widgetAction: ShortcutWidgetAction.home)
         }
         .configurationDisplayName("Shortcut")
         .description("A medium shortcut widget for your app.")
@@ -70,7 +78,8 @@ struct ShortcutWidgetMedium_Previews: PreviewProvider {
     static var previews: some View {
         ShortcutWidgetEntryMediumView(entry: SimpleEntryMedium(date: Date(),
                                                                configuration: MediumIntent()),
-                                      defaultColor: ShortcutWidgetColor.automatic)
+                                      widgetColor: ShortcutWidgetColor.automatic,
+                                      widgetAction: ShortcutWidgetAction.home)
         .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

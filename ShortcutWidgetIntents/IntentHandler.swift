@@ -104,7 +104,7 @@ extension IntentHandler: MediumIntentHandling {
         completion(collection, nil)
     }
     
-    func provideWdigetActionFiveOptionsCollection(for intent: MediumIntent, with completion: @escaping (INObjectCollection<WidgetAction>?, Error?) -> Void) {
+    func provideWidgetActionFiveOptionsCollection(for intent: MediumIntent, with completion: @escaping (INObjectCollection<WidgetAction>?, Error?) -> Void) {
         let actions: [WidgetAction] = [
             WidgetAction(identifier: "home", display: "Home"),
             WidgetAction(identifier: "email", display: "Email"),

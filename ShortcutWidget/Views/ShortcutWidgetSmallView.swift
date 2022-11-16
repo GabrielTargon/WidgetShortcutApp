@@ -9,12 +9,12 @@ import WidgetKit
 import SwiftUI
 
 struct ShortcutWidgetSmallView: View {
-    var defaultColor: ShortcutWidgetColor
-//    var action: ShortcutActionSmall
+    var widgetColor: ShortcutWidgetColor
+    var widgetAction: ShortcutWidgetAction
     
     var body: some View {
         ZStack {
-            defaultColor.backgroundColor
+            widgetColor.backgroundColor
             VStack {
                 HStack {
                     Spacer()
@@ -34,9 +34,9 @@ struct ShortcutWidgetSmallView: View {
                     Rectangle()
                         .frame(width: 75,
                                height: 75)
-                        .foregroundColor(defaultColor.buttonColor)
+                        .foregroundColor(widgetColor.buttonColor)
                         .cornerRadius(20)
-                    Image("home")
+                    widgetAction.icon
                         .resizable()
                         .frame(width: 40,
                                height: 40)
@@ -44,7 +44,7 @@ struct ShortcutWidgetSmallView: View {
                 
                 Spacer()
                 
-                Text("Home")
+                widgetAction.title
                     .font(.system(size: 20,
                                   weight: .semibold))
                     .foregroundColor(.white)
@@ -58,13 +58,14 @@ struct ShortcutWidgetSmallView: View {
             .padding(.leading)
             .padding(.trailing)
         }
-        .widgetURL(ShortcutURLs.home.url)
+        .widgetURL(widgetAction.url)
     }
 }
 
 struct ShortcutSmallView_Previews: PreviewProvider {
     static var previews: some View {
-        ShortcutWidgetSmallView(defaultColor: ShortcutWidgetColor.automatic)
+        ShortcutWidgetSmallView(widgetColor: ShortcutWidgetColor.automatic,
+                                widgetAction: ShortcutWidgetAction.home)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

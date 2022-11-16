@@ -44,10 +44,12 @@ struct ShortcutWidgetEntrySmallView : View {
     var entry: ProviderSmall.Entry
     
     let widgetColor: ShortcutWidgetColor
+    let widgetAction: ShortcutWidgetAction
 
     var body: some View {
         ShortcutWidgetSmallView(
-            defaultColor: widgetColor.getColorWith(string: entry.configuration.widgetColor?.identifier))
+            widgetColor: widgetColor.getColorWith(string: entry.configuration.widgetColor?.identifier),
+            widgetAction: widgetAction.getActionWith(string: entry.configuration.widgetAction?.identifier))
     }
 }
 
@@ -59,7 +61,8 @@ struct ShortcutWidgetSmall: Widget {
                             intent: SmallIntent.self,
                             provider: ProviderSmall()) { entry in
             ShortcutWidgetEntrySmallView(entry: entry,
-                                         widgetColor: ShortcutWidgetColor.automatic)
+                                         widgetColor: ShortcutWidgetColor.automatic,
+                                         widgetAction: ShortcutWidgetAction.home)
         }
         .configurationDisplayName("Shortcut")
         .description("A small shortcut widget for your app.")
@@ -71,7 +74,8 @@ struct ShortcutWidgetSmall_Previews: PreviewProvider {
     static var previews: some View {
             ShortcutWidgetEntrySmallView(entry: SimpleEntrySmall(date: Date(),
                                                                  configuration: SmallIntent()),
-                                         widgetColor: ShortcutWidgetColor.automatic)
+                                         widgetColor: ShortcutWidgetColor.automatic,
+                                         widgetAction: ShortcutWidgetAction.home)
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
