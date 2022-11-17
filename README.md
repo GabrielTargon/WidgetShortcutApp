@@ -15,15 +15,11 @@ iOS app with Widgets shortcuts
 ## Tech info
 
 - SwiftUI
-- Widget:
-  - 2 Widgets (small and medium)
-  - Custom configuration (color and action)
-  - Dark theme
-- Intents
-
-## Improvements
-
-- Network call
+- Components
+- 2 Widgets (small and medium)
+- Color and action custom (Intents)
+- Deeplink
+- Dark theme
 
 ## Informations
 

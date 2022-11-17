@@ -41,115 +41,30 @@ struct ShortcutWidgetMediumView: View {
                     .frame(height: 1)
                 
                 HStack {
-                    Link(destination: widgetActionOne.url) {
-                        VStack {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: 45,
-                                           height: 45)
-                                    .foregroundColor(widgetColor.buttonColor)
-                                    .cornerRadius(25)
-                                widgetActionOne.icon
-                                    .resizable()
-                                    .frame(width: 25,
-                                           height: 25)
-                            }
-                            
-                            widgetActionOne.title
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .frame(height: 10)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
+                    MediumButton(url: widgetActionOne.url,
+                                 title: widgetActionOne.title,
+                                 image: widgetActionOne.icon,
+                                 color: widgetColor.buttonColor)
                     
-                    Link(destination: widgetActionTwo.url) {
-                        VStack {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: 45,
-                                           height: 45)
-                                    .foregroundColor(widgetColor.buttonColor)
-                                    .cornerRadius(25)
-                                widgetActionTwo.icon
-                                    .resizable()
-                                    .frame(width: 25,
-                                           height: 25)
-                            }
-                            
-                            widgetActionTwo.title
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .frame(height: 10)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
+                    MediumButton(url: widgetActionTwo.url,
+                                 title: widgetActionTwo.title,
+                                 image: widgetActionTwo.icon,
+                                 color: widgetColor.buttonColor)
                     
-                    Link(destination: widgetActionThree.url) {
-                        VStack {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: 45,
-                                           height: 45)
-                                    .foregroundColor(widgetColor.buttonColor)
-                                    .cornerRadius(25)
-                                widgetActionThree.icon
-                                    .resizable()
-                                    .frame(width: 25,
-                                           height: 25)
-                            }
-                            
-                            widgetActionThree.title
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .frame(height: 10)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
+                    MediumButton(url: widgetActionThree.url,
+                                 title: widgetActionThree.title,
+                                 image: widgetActionThree.icon,
+                                 color: widgetColor.buttonColor)
                     
-                    Link(destination: widgetActionFour.url) {
-                        VStack {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: 45,
-                                           height: 45)
-                                    .foregroundColor(widgetColor.buttonColor)
-                                    .cornerRadius(25)
-                                widgetActionFour.icon
-                                    .resizable()
-                                    .frame(width: 25,
-                                           height: 25)
-                            }
-                            
-                            widgetActionFour.title
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .frame(height: 10)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
+                    MediumButton(url: widgetActionFour.url,
+                                 title: widgetActionFour.title,
+                                 image: widgetActionFour.icon,
+                                 color: widgetColor.buttonColor)
                     
-                    Link(destination: widgetActionFive.url) {
-                        VStack {
-                            ZStack {
-                                Rectangle()
-                                    .frame(width: 45,
-                                           height: 45)
-                                    .foregroundColor(widgetColor.buttonColor)
-                                    .cornerRadius(25)
-                                widgetActionFive.icon
-                                    .resizable()
-                                    .frame(width: 25,
-                                           height: 25)
-                            }
-                            
-                            widgetActionFive.title
-                                .font(.system(size: 15))
-                                .foregroundColor(.white)
-                                .frame(height: 10)
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
+                    MediumButton(url: widgetActionFive.url,
+                                 title: widgetActionFive.title,
+                                 image: widgetActionFive.icon,
+                                 color: widgetColor.buttonColor)
                 }
             }
                    .padding(.leading, 10)
@@ -166,6 +81,6 @@ struct ShortcutMediumView_Previews: PreviewProvider {
                                  widgetActionThree: ShortcutWidgetAction.call,
                                  widgetActionFour: ShortcutWidgetAction.profile,
                                  widgetActionFive: ShortcutWidgetAction.config)
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        .previewContext(WidgetPreviewContext(family: .systemMedium))
     }
 }

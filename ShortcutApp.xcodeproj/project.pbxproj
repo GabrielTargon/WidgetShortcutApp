@@ -27,6 +27,7 @@
 		B5B907DF291DA6E80035FB7A /* ShortcutData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B907DD291D83A10035FB7A /* ShortcutData.swift */; };
 		B5B907E4291DECB70035FB7A /* ShortcutWidgetAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B907E1291DE7A30035FB7A /* ShortcutWidgetAction.swift */; };
 		B5B907E7291E8BF30035FB7A /* ShortcutWidgetMedium.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B907E5291E8B8F0035FB7A /* ShortcutWidgetMedium.swift */; };
+		B5DF1AB82926F07A00A20EBE /* MediumButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF1AB62926EEA000A20EBE /* MediumButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		B5B907E0291DC95D0035FB7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B5B907E1291DE7A30035FB7A /* ShortcutWidgetAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutWidgetAction.swift; sourceTree = "<group>"; };
 		B5B907E5291E8B8F0035FB7A /* ShortcutWidgetMedium.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutWidgetMedium.swift; sourceTree = "<group>"; };
+		B5DF1AB62926EEA000A20EBE /* MediumButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 			children = (
 				B52D8A7D291D354A00BA0251 /* ShortcutWidgetSmallView.swift */,
 				B52D8A7C291D354A00BA0251 /* ShortcutWidgetMediumView.swift */,
+				B5DF1AB52926EE7800A20EBE /* Components */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,6 +183,14 @@
 				B5B907E1291DE7A30035FB7A /* ShortcutWidgetAction.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		B5DF1AB52926EE7800A20EBE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B5DF1AB62926EEA000A20EBE /* MediumButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +310,7 @@
 				B52D8A46291D31FD00BA0251 /* ShortcutWidgetBundle.swift in Sources */,
 				B52D8A81291D358300BA0251 /* ShortcutWidgetColor.swift in Sources */,
 				B5B907DF291DA6E80035FB7A /* ShortcutData.swift in Sources */,
+				B5DF1AB82926F07A00A20EBE /* MediumButton.swift in Sources */,
 				B52D8A48291D31FD00BA0251 /* ShortcutWidgetSmall.swift in Sources */,
 				B52D8A7E291D354A00BA0251 /* ShortcutWidgetMediumView.swift in Sources */,
 				B5B907E4291DECB70035FB7A /* ShortcutWidgetAction.swift in Sources */,
